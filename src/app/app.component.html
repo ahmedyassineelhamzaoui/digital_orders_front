@@ -1,9 +1,11 @@
-<div class="app-container">
+<body>
+<header>
+  <app-sidbar></app-sidbar>
   <app-header></app-header>
-  <div class="content">
-    <app-sidbar></app-sidbar>
-    <div class="all-components">
-      <router-outlet></router-outlet>
-    </div>
+</header>
+<main style="margin-top: 58px;">
+  <div class="container pt-4">
+    <router-outlet></router-outlet>
   </div>
-</div>
+</main>
+</body>
