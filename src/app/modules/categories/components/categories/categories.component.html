@@ -3,40 +3,5 @@
         <h4>Categories</h4>
         <button class="btn btn-primary"><i class="fas fa-plus me-1"></i>add new category</button>
     </div>
-    <div class="row mt-4 d-flex align-items-center justify-content-center ">
-        <div class="col-md-8">
-            <table class="table ">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">category name</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @for(item of categories ; track $index){
-                  <tr>
-                    <th scope="row">{{$index +1 }}</th>
-                    <td>{{item.name}}</td>
-                    <td>
-                        <div>
-                            <button class="btn btn-warning me-1">
-                                <i class="fas fa-edit"></i>
-                              </button>
-                              <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                              </button>
-                        </div>
-                    </td>
-                  </tr>
-                }@empty {
-                    <tr>
-                        <td colspan="3" class="text-center">No Data</td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
-    </div>
     
 </div>
