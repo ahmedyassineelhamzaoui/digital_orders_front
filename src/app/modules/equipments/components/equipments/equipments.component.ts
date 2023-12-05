@@ -42,5 +42,4 @@ export class EquipmentsComponent {
       this.isLoading = false;
     });
   }
-
 }
