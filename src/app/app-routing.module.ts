@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { EquipmentsComponent } from './modules/equipments/components/equipments/equipments.component';
 import { CategoriesComponent } from './modules/categories/components/categories/categories.component';
 import { NotfounderrorComponent } from './errors/components/notfounderror/notfounderror.component';
+import { DevisComponent } from './modules/devis/components/devis/devis.component';
 const routes: Routes = [
+  { path: 'devis', component: DevisComponent},
   { path: 'equipments', component: EquipmentsComponent },
   { path: 'categories', component: CategoriesComponent},
   { path: '404', component: NotfounderrorComponent },
