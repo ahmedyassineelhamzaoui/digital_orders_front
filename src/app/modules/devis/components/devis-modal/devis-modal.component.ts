@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DevisService } from '../../services/devis.service';
-
 @Component({
   selector: 'app-devis-modal',
   templateUrl: './devis-modal.component.html',
@@ -13,7 +12,7 @@ export class DevisModalComponent {
     public dialogRef:MatDialogRef<DevisModalComponent>,
     public devisService:DevisService
     ) { }
-  data : any[] = [];
+    demandes : any[] = [];
   closeModal(){
     this.dialogRef.close();
   }
@@ -22,7 +21,7 @@ export class DevisModalComponent {
   }
   getAllDevis(){
     return this.devisService.getAllDevis().subscribe((res:any)=>{
-      this.data = res; 
+      this.demandes = res; 
       console.log(res);
       },
       (err:any)=>console.log(err));

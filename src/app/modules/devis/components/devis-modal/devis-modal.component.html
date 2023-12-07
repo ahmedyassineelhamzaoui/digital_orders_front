@@ -28,19 +28,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @for(demande of demandes ; track $index){
                     <tr>
                         <th scope="row">
                             <div class="form-check">
-                                1
+                                {{$index +1}}
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                             </div>
                         </th>
-                        <td>yassine</td>
-                        <td>equipment1</td>
-                        <td>Accepted</td>
-                        <td>12/12/2021</td>
-                        <td>12/12/2021</td>
+                        <td>{{demande.user}}</td>
+                        <td>{{demande.equipment.name}}</td>
+                        <td>{{demande.demandeStatus}}</td>
+                        <td>{{demande.startDate | date:'yyyy-MM-dd'}}</td>
+                        <td>{{demande.endDate | date:'yyyy-MM-dd'}}</td>
+                        
                     </tr>
+                     }
                 </tbody>
             </table>
         </div>

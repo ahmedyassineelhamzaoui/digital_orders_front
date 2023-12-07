@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { DevisComponent } from './components/devis/devis.component';
 import { DevisModalComponent } from './components/devis-modal/devis-modal.component';
 
-
 @NgModule({
   declarations: [
     DevisComponent,
@@ -11,6 +10,10 @@ import { DevisModalComponent } from './components/devis-modal/devis-modal.compon
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    DevisComponent,
+    DevisModalComponent
   ]
 })
 export class DevisModule { }
