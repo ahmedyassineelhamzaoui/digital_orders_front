@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EquipmentsComponent } from './modules/equipments/components/equipments/equipments.component';
 import { SharedModule } from './shared/shared.module';
-import { RouterModule } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    MatDialogModule
     ],
   providers: [
     provideClientHydration()
