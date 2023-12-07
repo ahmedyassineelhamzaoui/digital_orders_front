@@ -9,6 +9,6 @@ export class DevisService {
 
   constructor(private http:HttpClient) { }
   getAllDevis(){
-    return this.http.get(environment.apiURL+'devis');
+    return this.http.get(environment.apiURL+'demandes');
   }
 }
