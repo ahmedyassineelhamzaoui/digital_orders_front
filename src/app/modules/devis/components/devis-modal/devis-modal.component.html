@@ -10,6 +10,7 @@
             </div>
         </div>
         <div class="scrollable-table">
+            @if(!isLoading){
             <table class="table">
                 <thead class="table-dark">
                     <tr>
@@ -17,7 +18,7 @@
 
                             <div class="form-check">
                                 Id
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <input class="form-check-input"  type="checkbox"  id="flexCheckDefault" />
                             </div>
                         </th>
                         <th scope="col">user</th>
@@ -41,11 +42,16 @@
                         <td>{{demande.demandeStatus}}</td>
                         <td>{{demande.startDate | date:'yyyy-MM-dd'}}</td>
                         <td>{{demande.endDate | date:'yyyy-MM-dd'}}</td>
-                        
+
                     </tr>
                      }
                 </tbody>
             </table>
+            }@else{
+                <div class="d-flex align-items-center justify-content-center h-100 w-100">
+                    <app-spinner></app-spinner>
+                </div>
+            }
         </div>
         <div class="d-flex justify-content-end align-items-center mb-4">
             <button type="button" class="btn btn-primary me-2">save</button>
