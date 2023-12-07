@@ -1,4 +1,4 @@
-<h4>filter equipments by categories</h4>
+<!-- <h4>filter equipments by categories</h4> -->
 <!-- @if(!isLoading){
 <select class="form-select">
     <option value="">Select Category</option>
@@ -10,44 +10,24 @@
 <!-- </select> -->
 <div class="container mt-2 ">
     <div class="mb-2 d-flex align-items-center justify-content-between">
-        <h4>Equipments</h4>
-        <button class="btn btn-primary"><i class="fas fa-plus me-1"></i>add new category</button>
+        <h4>Demandes</h4>
+        <!-- <button class="btn btn-primary"><i class="fas fa-plus me-1"></i>add new category</button> -->
     </div>
     <div class="row mt-2 gap-4 d-flex justify-content-center align-items-center">
         @for (item of demandes; track $index) {
-        <!-- <div class="col-5 mb-3 bg-white" style="max-width: 550px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="../../../../../assets/images/img1.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title my-2">{{item.name}}</h5>
-                        <h6 class="mb-2">{{item.equipment.name}}</h6>
-                        <p class="card-text">This is a wider card </p>
-                        <p class="card-text">Price: <small class="text-muted"> {{item.user}}</small></p>
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <div>
-                                <button class="btn btn-warning me-1">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-danger">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class="card" style="width: 18rem;">
             <img src="../../../../../assets/images/img1.jpg" class="img-fluid rounded-start" alt="...">
             <div class="card-body">
-                <h5 class="card-title my-2">{{item.name}}</h5>
+                <h5 class="card-title my-2 ">{{item.demandeStatus}}</h5>
                 <h6 class="mb-2">{{item.equipment.name}}</h6>
-                <p class="card-text">This is a wider card </p>
-                <p class="card-text">Price: <small class="text-muted"> {{item.user}}</small></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p class="card-text"><b>User: </b><small class="text-muted"> {{item.user}}</small></p>
+                <p class="card-text"><b>Reserved From:</b><br> <small class="text-muted"> {{item.startDate}}</small> <br><b>To :</b><br> <small class="text-muted"> {{item.endDate}}</small></p>
+                @if (item.demandeStatus === 'PENDING') {
+                    <a href="#" class="btn btn-primary">ACCEPT</a>
+                }@else {
+                    <a href="#" class="btn btn-danger">DELETE</a>
+
+                }
             </div>
           </div>
         }@empty {
