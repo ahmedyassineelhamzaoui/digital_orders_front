@@ -1,4 +1,4 @@
-<div id="add-devis-container">
+<div id="add-devis-container">    
 
     <form id="add-devis-form">
         <div class="row mb-4">
@@ -42,7 +42,10 @@
                 </tr>
             </tbody>
         </table>
-
-        <button type="button" class="btn btn-primary btn-block mb-4">Place order</button>
+        <div class="d-flex justify-content-end align-items-center mb-4">
+            <button type="button" class="btn btn-primary me-2">save</button>
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+       
     </form>
 </div>

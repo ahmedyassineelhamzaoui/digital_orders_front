@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-devis-modal',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class DevisModalComponent {
 
+  constructor(public dialogRef:MatDialogRef<DevisModalComponent>) { }
+
+  closeModal(){
+    this.dialogRef.close();
+  }
 }
