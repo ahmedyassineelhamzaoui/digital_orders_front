@@ -9,11 +9,13 @@ import { RouterModule } from '@angular/router';
 import { provideHttpClient , withFetch } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { ContractsComponent } from './modules/contracts/components/contracts/contracts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EquipmentsComponent
+    EquipmentsComponent,
+    ContractsComponent
   ],
   imports: [
     BrowserModule,
