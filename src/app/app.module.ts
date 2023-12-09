@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { EquipmentsComponent } from './modules/equipments/components/equipments/equipments.component';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { provideHttpClient , withFetch } from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,13 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule,
+    FormsModule
     ],
+    
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
