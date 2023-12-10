@@ -4,6 +4,7 @@ import { DevisComponent } from './components/devis/devis.component';
 import { DevisModalComponent } from './components/devis-modal/devis-modal.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    MatPaginatorModule
   ],
   exports:[
     DevisComponent,

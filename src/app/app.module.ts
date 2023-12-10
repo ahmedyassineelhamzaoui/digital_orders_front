@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { EquipmentsComponent } from './modules/equipments/components/equipments/equipments.component';
 import { SharedModule } from './shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule
     ],
   providers: [
     provideClientHydration()

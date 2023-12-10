@@ -18,7 +18,8 @@
 
                             <div class="form-check">
                                 Id
-                                <input class="form-check-input" [(ngModel)]="selectAll" (change)="toggleSelectAll()" type="checkbox" name="selectAll"    />
+                                <input class="form-check-input" [(ngModel)]="selectAll" (change)="toggleSelectAll()"
+                                    type="checkbox" name="selectAll" />
                             </div>
                         </th>
                         <th scope="col">user</th>
@@ -30,12 +31,12 @@
                 </thead>
                 <tbody>
                     @if(demandes.length != 0){
-                    @for(demande of demandes ; track $index){
-                    <tr>
+                    <tr *ngFor="let demande of demandes | slice: currentPageIndex * pageSize : (currentPageIndex + 1) * pageSize; let i = index">
                         <th scope="row">
                             <div class="form-check">
-                                {{$index +1}}
-                                <input class="form-check-input" [(ngModel)]="demande.isSelected" (change)="checkBoxChanged()" name="chckbox{{$index+1}}"  type="checkbox"  />
+                                {{i + 1}}
+                                <input class="form-check-input" [(ngModel)]="demande.isSelected"
+                                    (change)="checkBoxChanged()" name="checkbox{{i + 1}}" type="checkbox" />
                             </div>
                         </th>
                         <td>{{demande.user}}</td>
@@ -43,9 +44,7 @@
                         <td>{{demande.demandeStatus}}</td>
                         <td>{{demande.startDate | date:'yyyy-MM-dd'}}</td>
                         <td>{{demande.endDate | date:'yyyy-MM-dd'}}</td>
-
                     </tr>
-                    }
                     }@else{
                     <tr>
                         <td colspan="6">
@@ -57,6 +56,15 @@
                     }
                 </tbody>
             </table>
+            <mat-paginator
+                [length]="demandes.length"
+                [showFirstLastButtons]="true"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                [pageIndex]="currentPageIndex"
+                (page)="handlePageEvent($event)"
+            >
+
+            </mat-paginator>
             }@else{
             <div class="d-flex align-items-center justify-content-center h-100 w-100">
                 <app-spinner></app-spinner>
