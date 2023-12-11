@@ -37,7 +37,7 @@ export class DevisModalComponent {
   }
   getAllDevis() {
     this.isLoading = true;
-    return this.devisService.getAllDevis().subscribe((res: any) => {
+    return this.devisService.getAllDemandes().subscribe((res: any) => {
       this.demandes = res.map((item: any) => ({ ...item, isSelected: false }));;
       this.isLoading = false;
     },

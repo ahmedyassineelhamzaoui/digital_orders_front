@@ -9,7 +9,7 @@ export class DevisService {
 
   
   constructor(private http:HttpClient) { }
-  getAllDevis(){
+  getAllDemandes(){
     return this.http.get(environment.apiURL+'demandes');
   }
   saveDevis(description: string, demandes: any[], devisStatus: string){
@@ -20,5 +20,8 @@ export class DevisService {
     };
     console.log(body);
     return this.http.post(environment.apiURL+'devis', body);
+  }
+  getAllDevis(){
+    return this.http.get(environment.apiURL+'devis');
   }
 }
