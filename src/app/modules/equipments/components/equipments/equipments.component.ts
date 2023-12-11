@@ -19,7 +19,6 @@ export class EquipmentsComponent {
   ngOnInit() {
       this.isLoading = true;
       this.getAllCategories();
-
       this.getAllEquipments();
   }
   getAllEquipments(){

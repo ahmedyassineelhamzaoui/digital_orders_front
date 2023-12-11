@@ -13,6 +13,7 @@ export class ContractsComponent {
 
   ngOnInit() {
    this.getContracts();
+   
   }
 
   private getContracts(){
@@ -21,5 +22,19 @@ export class ContractsComponent {
       console.log(data)
     });
 
+  }
+  archiveContract(id: string | undefined): void {
+    if (id) {
+      // const contractId = id.toString();
+      this.contractService.archiveContract(id).subscribe(
+        (response) => {
+          console.log(response);
+          
+        },
+        (error: any) => {
+          console.error('Error archiving contract:', error);
+        }
+      );
+    }
   }
 }

@@ -15,4 +15,10 @@ export class ContractsService {
   getContractsList(): Observable<any>{
     return this.httpClient.get(`${this.baseURL}`);
   }
+
+  archiveContract(contractId: String): Observable<string> {
+    return this.httpClient.post<string>(`${this.baseURL}/archive-contract/${contractId}`, {});
+  }
+
+  
 }
