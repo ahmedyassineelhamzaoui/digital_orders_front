@@ -13,7 +13,10 @@ export class DemandesComponent{
   };
   constructor(private demandesService: DemandesService) { }
   ngOnInit() {
-      this.demandesService.getAllDemands().subscribe(data => {
+     this.getAllDemandes()
+  }
+  getAllDemandes(){
+    this.demandesService.getAllDemands().subscribe(data => {
       this.demandes = data;
         console.log(data);
     });
@@ -24,6 +27,8 @@ export class DemandesComponent{
       this.demandesService.statusChange(demandeId,this.status).subscribe( 
         (response) => {
           console.log('Successfully submitted:', response);
+          // window.location.reload();
+          this.getAllDemandes();
         }
       );
   }
