@@ -12,4 +12,7 @@ export class DemandesService {
   getAllDemands(): Observable<any> {
     return this.http.get(environment.apiURL+'demandes');
   }
+  statusChange(demandeId:number ,status:Object):Observable<any> {
+    return this.http.put(environment.apiURL+'updateDemande/'+demandeId , status);
+  }
 }

@@ -23,7 +23,7 @@
                 <p class="card-text"><b>User: </b><small class="text-muted"> {{item.user}}</small></p>
                 <p class="card-text"><b>Reserved From:</b><br> <small class="text-muted"> {{item.startDate}}</small> <br><b>To :</b><br> <small class="text-muted"> {{item.endDate}}</small></p>
                 @if (item.demandeStatus === 'PENDING') {
-                    <a href="#" class="btn btn-primary">ACCEPT</a>
+                    <button class="btn btn-primary" (click)="accept(item.id)">ACCEPT</button>
                 }@else {
                     <a href="#" class="btn btn-danger">DELETE</a>
 
