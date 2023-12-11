@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ContractsService } from '../../services/contracts.service';
 
+import { log } from 'console';
+
 @Component({
   selector: 'app-contracts',
   templateUrl: './contracts.component.html',
@@ -36,5 +38,8 @@ export class ContractsComponent {
         }
       );
     }
+
+ 
+
   }
 }
