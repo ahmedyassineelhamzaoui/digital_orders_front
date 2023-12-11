@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
+
 
 
 
@@ -9,20 +11,18 @@ import { environment } from '../../../../environments/environment';
 })
 export class ContractsService {
 
-  constructor(private http:HttpClient) { }
+  private baseURL = "http://localhost:8080/api/contracts";
+  private saveUrl= "http://localhost:8080/api/save";
 
-  getAllContract(){
-    return this.http.get(environment.apiURL+'contracts');
+  constructor(private httpClient: HttpClient) { }
+  
+  getContractsList(): Observable<any>{
+    return this.httpClient.get(`${this.baseURL}`);
   }
 
-
-  getOneContract(id : string) {
-    return this.http.get(environment.apiURL+'contracts/'+id);
+  archiveContract(contractId: String): Observable<string> {
+    return this.httpClient.post<string>(`${this.baseURL}/archive-contract/${contractId}`, {});
   }
 
-
-  archiveContract(id : string) {
-    return this.http.post(environment.apiURL+'contracts/'+id, JSON.stringify);
-  }
 
 }

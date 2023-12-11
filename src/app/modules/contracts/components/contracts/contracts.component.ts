@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ContractsService } from '../../services/contracts.service';
-import { log } from 'console';
 
+import { log } from 'console';
 
 @Component({
   selector: 'app-contracts',
@@ -9,16 +9,37 @@ import { log } from 'console';
   styleUrl: './contracts.component.scss'
 })
 export class ContractsComponent {
-  constructor(private contractService: ContractsService) {}
+  contracts:any[]= [];
+
+  constructor(private contractService: ContractsService) {  }
 
   ngOnInit() {
-    this.contractService.getAllContract().subscribe((data : object) =>{
-      console.log(data);
-      
-    this.contractService.getOneContract("00000000-0000-0000-0000-000000000000").subscribe((data : object) =>{
-      console.log(data);
-      
-    })  
-    })
+   this.getContracts();
+   
+  }
+
+  private getContracts(){
+    this.contractService.getContractsList().subscribe((data:any) => {
+      this.contracts = data;
+      console.log(data)
+    });
+
+  }
+  archiveContract(id: string | undefined): void {
+    if (id) {
+      // const contractId = id.toString();
+      this.contractService.archiveContract(id).subscribe(
+        (response) => {
+          console.log(response);
+          
+        },
+        (error: any) => {
+          console.error('Error archiving contract:', error);
+        }
+      );
+    }
+
+ 
+
   }
 }
