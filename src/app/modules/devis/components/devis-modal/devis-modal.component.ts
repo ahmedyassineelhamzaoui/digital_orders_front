@@ -3,7 +3,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { DevisService } from '../../services/devis.service';
 import { DevisModule } from '../../devis.module';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-
+import { error } from 'console';
+import { AddModalComponent } from '../add-modal/add-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-devis-modal',
   templateUrl: './devis-modal.component.html',
@@ -16,9 +18,10 @@ export class DevisModalComponent {
   selectAll: boolean = false;
   pageSize: number = 5;
   currentPageIndex: number = 0;
-
+  selectedDemandes: any[] = [];
   constructor(
     public dialogRef: MatDialogRef<DevisModalComponent>,
+    public addModal: MatDialog,
     public devisService: DevisService
   ) { }
 
@@ -57,6 +60,18 @@ export class DevisModalComponent {
   }
   isAllcheckBoxesSelected() {
     return this.demandes.every(demande => demande.isSelected);
+  }
+ 
+  addDevis() {
+    this.selectedDemandes = this.demandes.filter(demande => demande.isSelected);
+    if (this.selectedDemandes.length === 0) {
+      alert('Please check a demande before adding a devis');
+      return;
+    }
+    this.closeModal();
+    this.addModal.open(AddModalComponent, {
+      data: { description: '', items: this.selectedDemandes }
+    });
   }
  
 }
