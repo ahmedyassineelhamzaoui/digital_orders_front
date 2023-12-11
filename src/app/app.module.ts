@@ -8,11 +8,12 @@ import { SharedModule } from './shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddModalComponent } from './modules/devis/components/add-modal/add-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EquipmentsComponent
+    EquipmentsComponent,
   ],
   imports: [
     BrowserModule,
