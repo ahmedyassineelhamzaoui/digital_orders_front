@@ -14,4 +14,11 @@ export class ContractsService {
   getAllContract(){
     return this.http.get(environment.apiURL+'contracts');
   }
+
+
+  getOneContract(id : string) {
+    return this.http.get(environment.apiURL+'contracts/'+id);
+  }
+
+
 }

@@ -15,6 +15,10 @@ export class ContractsComponent {
     this.contractService.getAllContract().subscribe((data : object) =>{
       console.log(data);
       
+    this.contractService.getOneContract("00000000-0000-0000-0000-000000000000").subscribe((data : object) =>{
+      console.log(data);
+      
+    })  
     })
   }
 }
