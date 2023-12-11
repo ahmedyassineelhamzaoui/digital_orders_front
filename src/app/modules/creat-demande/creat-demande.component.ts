@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreatDemandeComponent {
 
-    
+  errorMessages: string = '';
   formData:any = {};
 
   constructor(
@@ -28,7 +28,7 @@ export class CreatDemandeComponent {
         this.router.navigate(['/demandes']);
       },
       (error)=>{
-        console.log(error.error)
+        this.errorMessages = error.error.message;
       }
     );
   }

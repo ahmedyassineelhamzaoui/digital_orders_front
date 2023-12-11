@@ -25,8 +25,8 @@ export class DemandesComponent{
         // this.isLoading = false;
     });
   }
-  updateStatus(demande:any){
-    this.status.demandeStatus="ACCEPTED";
+  updateStatus(demande:any , demandeStatus:string){
+    this.status.demandeStatus=demandeStatus;
     console.log(this.status)
       this.demandesService.statusChange(demande.id,this.status).subscribe( 
         (response) => {

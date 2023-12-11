@@ -18,5 +18,8 @@ export class DemandesService {
   delete(demandeId:number):Observable<any> {
     return this.http.delete(environment.apiURL+'deleteDemande/'+demandeId);
   }
+  update(demandeId:string|null ,demand:Object):Observable<any>{
+    return this.http.put(environment.apiURL+'updateDemande/'+demandeId , demand);
+  }
   
 }

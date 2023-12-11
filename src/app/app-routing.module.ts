@@ -6,6 +6,8 @@ import { NotfounderrorComponent } from './errors/components/notfounderror/notfou
 import { DemandesComponent } from './modules/demandes/components/demandes/demandes.component';
 import { CreatDemandeComponent } from './modules/creat-demande/creat-demande.component';
 import { DevisComponent } from './modules/devis/components/devis/devis.component';
+import { UpdateDemandeComponent } from './modules/demandes/components/update-demande/update-demande.component';
+
 const routes: Routes = [
   { path: 'devis', component: DevisComponent},
   { path: 'equipments', component: EquipmentsComponent },
@@ -13,6 +15,7 @@ const routes: Routes = [
   { path: 'demandes', component: DemandesComponent},
   { path: '404', component: NotfounderrorComponent },
   { path: 'Creatdemande/:id', component : CreatDemandeComponent},
+  { path: 'updateDemande/:id', component : UpdateDemandeComponent},
   { path: '', redirectTo: '/equipments', pathMatch: 'full'},
   { path: '**', redirectTo: '/404', pathMatch: 'full'},
 ];
