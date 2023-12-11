@@ -21,7 +21,7 @@
                         @if (item.demandeStatus === 'PENDING') {
                             <button class="btn btn-success" title="accept demand" (click)="updateStatus(item ,'ACCEPTED')"><i class="fa-solid fa-check" style="color: #ffffff;"></i></button>
                             <button  class="btn btn-danger ms-3" title="denie demand" (click)="updateStatus(item ,'DENIED')"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></button>
-                            <button class="btn btn-primary ms-3" ><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-primary ms-3" (click)="updateDemande(item.id)" ><i class="fas fa-edit"></i></button>
                         }
                         <button class="btn btn-danger ms-3" (click)="deleteDemand(item.id)"><i class="fas fa-trash"></i></button>
                     </div>

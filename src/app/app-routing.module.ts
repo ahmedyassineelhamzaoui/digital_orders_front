@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent},
   { path: 'demandes', component: DemandesComponent},
   { path: '404', component: NotfounderrorComponent },
-  { path: 'Creatdemande/:id', component : CreatDemandeComponent},
   { path: 'updateDemande/:id', component : UpdateDemandeComponent},
+  { path: 'Creatdemande/:id', component : CreatDemandeComponent},
   { path: '', redirectTo: '/equipments', pathMatch: 'full'},
   { path: '**', redirectTo: '/404', pathMatch: 'full'},
 ];

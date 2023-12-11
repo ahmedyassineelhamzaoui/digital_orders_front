@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DemandesComponent } from './components/demandes/demandes.component';
 import { UpdateDemandeComponent } from './components/update-demande/update-demande.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
   ]
 })
 export class DemandesModule { }

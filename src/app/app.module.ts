@@ -17,7 +17,7 @@ import { AddModalComponent } from './modules/devis/components/add-modal/add-moda
   declarations: [
     AppComponent,
     EquipmentsComponent,
-    CreatDemandeComponent,
+    CreatDemandeComponent,  
   ],
   imports: [
     FormsModule,
@@ -30,7 +30,8 @@ import { AddModalComponent } from './modules/devis/components/add-modal/add-moda
     MatDialogModule
     ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DemandesService } from '../../services/demandes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-demandes',
@@ -12,11 +13,17 @@ export class DemandesComponent{
   status:any = {
     demandeStatus:''
   };
-  constructor(private demandesService: DemandesService,
+  constructor(
+    private demandesService: DemandesService,
+    private router: Router
     ) { }
   ngOnInit() {
     // this.isLoading = true;
      this.getAllDemandes()
+  }
+  updateDemande(demandeId:number){
+    console.log(demandeId)
+    this.router.navigate(['/updateDemande/'+ demandeId]);
   }
   getAllDemandes(){
     this.demandesService.getAllDemands().subscribe(data => {

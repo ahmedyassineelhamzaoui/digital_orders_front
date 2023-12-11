@@ -21,5 +21,8 @@ export class DemandesService {
   update(demandeId:string|null ,demand:Object):Observable<any>{
     return this.http.put(environment.apiURL+'updateDemande/'+demandeId , demand);
   }
+  getDemandByid(demandeId:string|null):Observable<any>{
+    return this.http.get(environment.apiURL+'getDemande/'+demandeId);
+  }
   
 }

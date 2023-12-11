@@ -2,17 +2,17 @@
     <div class="container shadow rounded bg-white border p-4" style="width: 50%">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 mb-5" id="exampleModalLabel">Creat demandes</h1>
+          <h1 class="modal-title fs-5 mb-5" id="exampleModalLabel">Update Demandes</h1>
         </div>
         <div class="modal-body">
             <form (ngSubmit)="onUpdate()" >
                     <div class="mb-3">
                         <label for="startDate" class="form-label">From : </label>
-                        <!-- <input type="date" id="startDate" name="startDate"  [(ngModel)]="formInfo.startDate" class="form-control"> -->
+                        <input type="date" id="startDate" name="startDate" [(ngModel)]="demande.startDate" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="endDate" class="form-label">To</label>
-                        <!-- <input type="date" id="endDate" name="endDate" [(ngModel)]="formInfo.endDate" class="form-control"> -->
+                        <input type="date" id="endDate" name="endDate" [(ngModel)]="demande.endDate" class="form-control">
                     </div>
                     <!-- <div class="mb-3">
                         <input type="text" id="equipmentId" name="equipmentId"  [(ngModel)]="formInfo.equipmentId" class="form-control" >
