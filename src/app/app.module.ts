@@ -8,6 +8,10 @@ import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { CreatDemandeComponent } from './modules/creat-demande/creat-demande.component';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient , withFetch } from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { ContractsComponent } from './modules/contracts/components/contracts/contracts.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,19 +22,25 @@ import { AddModalComponent } from './modules/devis/components/add-modal/add-moda
     AppComponent,
     EquipmentsComponent,
     CreatDemandeComponent,
+    ContractsComponent
   ],
   imports: [
     FormsModule,
     RouterModule,
     BrowserAnimationsModule,
     SharedModule,
+    HttpClientModule,
+    FormsModule,
+    MatDialogModule,
     MatPaginatorModule,
     AppRoutingModule,
     BrowserModule,
     MatDialogModule
     ],
+    
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })

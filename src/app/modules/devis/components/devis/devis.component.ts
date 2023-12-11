@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DevisModalComponent } from '../devis-modal/devis-modal.component';
 import { DevisService } from '../../services/devis.service';
-import { get } from 'http';
 import { PageEvent } from '@angular/material/paginator';
-
+import { UpdateDevisComponent } from '../update-devis/update-devis.component';
 @Component({
   selector: 'app-devis',
   templateUrl: './devis.component.html',
@@ -39,6 +38,15 @@ export class DevisComponent {
     }, error=>{
       this.errorMessage = error.error.timestamp +" status: "+ error.error.status +" error: "+ error.error.error +" path: "+ error.error.path;
       this.isLoading = false;
+    });
+  }
+  openEditModal(id: string) {
+    const dialogRef = this.dialog.open(UpdateDevisComponent, {
+      data: { id: id }
+    });
+  
+    dialogRef.afterClosed().subscribe(() => {
+        this.getAllDevis();
     });
   }
 }

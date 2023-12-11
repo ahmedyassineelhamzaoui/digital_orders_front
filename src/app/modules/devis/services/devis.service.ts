@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 
@@ -7,11 +7,13 @@ import { environment } from '../../../../environments/environment';
 })
 export class DevisService {
 
-  
+ 
   constructor(private http:HttpClient) { }
+
   getAllDemandes(){
-    return this.http.get(environment.apiURL+'demandes');
+    return this.http.get<any[]>(environment.apiURL+'demandes');
   }
+
   saveDevis(description: string, demandes: any[], devisStatus: string){
     const body = {
       Terms: description,
@@ -24,4 +26,9 @@ export class DevisService {
   getAllDevis(){
     return this.http.get(environment.apiURL+'devis');
   }
+  updateDevisStatus(id: string, status: string){    
+    const params = new HttpParams().set('status', status);
+    return this.http.put(environment.apiURL+'devis/'+id, {}, { params: params });
+  }
+  
 }
