@@ -25,9 +25,9 @@
                 @if (item.demandeStatus === 'PENDING') {
                     <button class="btn btn-primary" (click)="accept(item.id)">ACCEPT</button>
                 }@else {
-                    <a href="#" class="btn btn-danger">DELETE</a>
-
+                    <button  class="btn btn-warning">DENIED</button>
                 }
+                <button class="btn btn-danger ms-3" (click)="deleteDemand(item.id)">DELETE</button>
             </div>
           </div>
         }@empty {

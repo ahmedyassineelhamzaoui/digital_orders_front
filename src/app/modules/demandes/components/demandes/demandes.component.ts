@@ -32,4 +32,13 @@ export class DemandesComponent{
         }
       );
   }
+  deleteDemand(demandeId:number){
+    this.demandesService.delete(demandeId).subscribe( 
+      (response) => {
+        console.log('Successfully submitted:', response);
+        // window.location.reload();
+        this.getAllDemandes();
+      }
+    );
+  }
 }

@@ -15,4 +15,8 @@ export class DemandesService {
   statusChange(demandeId:number ,status:Object):Observable<any> {
     return this.http.put(environment.apiURL+'updateDemande/'+demandeId , status);
   }
+  delete(demandeId:number):Observable<any> {
+    return this.http.delete(environment.apiURL+'deleteDemande/'+demandeId);
+  }
+  
 }
