@@ -30,10 +30,10 @@
                     <td>{{devi.devisStatus}}</td>
                     <td>
                         <div class="d-flex justify-content-center align-items-center">
-                            <button class="btn btn-warning me-1">
+                            <button class="btn btn-warning me-1" (click)="openEditModal(devi.id)">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" >
                                 <i class="fas fa-trash"></i>
                             </button>
                         </div>
