@@ -8,6 +8,10 @@ import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { CreatDemandeComponent } from './modules/creat-demande/creat-demande.component';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddModalComponent } from './modules/devis/components/add-modal/add-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +20,14 @@ import { FormsModule } from '@angular/forms';
     CreatDemandeComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
     FormsModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    MatPaginatorModule,
+    AppRoutingModule,
+    BrowserModule,
+    MatDialogModule
     ],
   providers: [
     provideClientHydration()

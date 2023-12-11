@@ -1,0 +1,35 @@
+<div id="save-devis-container">
+
+    <form id="save-devis-form">
+
+        @if(errorMessages){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{errorMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
+        @if(successMessages){
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Error! </strong> {{successMessages}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            }
+        <div class="my-3">
+            <label  class="form-label">Terms & Conditons</label>
+            <textarea [(ngModel)]="description" name="description" class="form-control"  rows="3"></textarea>
+        </div>
+        <div class="my-3">
+            <label  class="form-label">demandes</label>
+                <div class="form-control">
+                    @for(demande of selectedDemandes;track $index){
+                        <button class="btn btn-success text-light my-1 mx-2">{{demande.id}}</button>
+                    }
+                </div>
+        </div>
+        <div class="d-flex justify-content-end align-items-center mb-4">
+            <button type="button" class="btn btn-primary me-2" (click)="saveDevis()">save</button>
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+
+    </form>
+</div>

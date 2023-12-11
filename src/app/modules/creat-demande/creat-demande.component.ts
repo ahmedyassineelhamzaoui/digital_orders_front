@@ -22,7 +22,6 @@ export class CreatDemandeComponent {
   }
   onSubmit() {
     this.formData.userId = "874c2bf8-a3ea-4bc6-95cc-9feddce4bd5a";
-    console.log(this.formData);
     this.demandesService.insertData(this.formData).subscribe(
       (response) => {
         console.log('Successfully submitted:', response);

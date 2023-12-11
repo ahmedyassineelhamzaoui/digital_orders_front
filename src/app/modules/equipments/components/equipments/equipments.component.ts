@@ -14,12 +14,11 @@ export class EquipmentsComponent {
   isLoading : boolean = false;
   constructor(
     private equipmentService:EquipmentsService,
-    private categoryService:CategoriesService
+    private categoryService:CategoriesService,
     ) { }
   ngOnInit() {
       this.isLoading = true;
       this.getAllCategories();
-
       this.getAllEquipments();
   }
   getAllEquipments(){

@@ -1,15 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DevisComponent } from './components/devis/devis.component';
-
-
+import { DevisModalComponent } from './components/devis-modal/devis-modal.component';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { AddModalComponent } from './components/add-modal/add-modal.component';
 
 @NgModule({
   declarations: [
-    DevisComponent
+    DevisComponent,
+    DevisModalComponent,
+    AddModalComponent  
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    MatPaginatorModule
+  ],
+  exports:[
+    DevisComponent,
+    DevisModalComponent
   ]
 })
 export class DevisModule { }

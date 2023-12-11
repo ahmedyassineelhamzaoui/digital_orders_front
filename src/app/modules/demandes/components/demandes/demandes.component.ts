@@ -7,27 +7,30 @@ import { DemandesService } from '../../services/demandes.service';
   styleUrl: './demandes.component.scss'
 })
 export class DemandesComponent{
+  // isLoading: boolean=false;
   demandes:any[] = [];
   status:any = {
     demandeStatus:''
   };
-  constructor(private demandesService: DemandesService) { }
+  constructor(private demandesService: DemandesService,
+    ) { }
   ngOnInit() {
+    // this.isLoading = true;
      this.getAllDemandes()
   }
   getAllDemandes(){
     this.demandesService.getAllDemands().subscribe(data => {
       this.demandes = data;
         console.log(data);
+        // this.isLoading = false;
     });
   }
-  accept(demandeId:number){
+  updateStatus(demande:any){
     this.status.demandeStatus="ACCEPTED";
     console.log(this.status)
-      this.demandesService.statusChange(demandeId,this.status).subscribe( 
+      this.demandesService.statusChange(demande.id,this.status).subscribe( 
         (response) => {
           console.log('Successfully submitted:', response);
-          // window.location.reload();
           this.getAllDemandes();
         }
       );
@@ -40,5 +43,9 @@ export class DemandesComponent{
         this.getAllDemandes();
       }
     );
+  }
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return date.toISOString().split('T')[0];
   }
 }

@@ -5,7 +5,9 @@ import { CategoriesComponent } from './modules/categories/components/categories/
 import { NotfounderrorComponent } from './errors/components/notfounderror/notfounderror.component';
 import { DemandesComponent } from './modules/demandes/components/demandes/demandes.component';
 import { CreatDemandeComponent } from './modules/creat-demande/creat-demande.component';
+import { DevisComponent } from './modules/devis/components/devis/devis.component';
 const routes: Routes = [
+  { path: 'devis', component: DevisComponent},
   { path: 'equipments', component: EquipmentsComponent },
   { path: 'categories', component: CategoriesComponent},
   { path: 'demandes', component: DemandesComponent},
