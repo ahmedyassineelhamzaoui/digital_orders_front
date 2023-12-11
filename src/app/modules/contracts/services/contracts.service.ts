@@ -21,4 +21,8 @@ export class ContractsService {
   }
 
 
+  archiveContract(id : string) {
+    return this.http.post(environment.apiURL+'contracts/'+id, JSON.stringify);
+  }
+
 }
