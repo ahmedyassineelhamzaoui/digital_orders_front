@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { EquipmentsComponent } from './modules/equipments/components/equipments/equipments.component';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { CreatDemandeComponent } from './modules/creat-demande/creat-demande.component';
+import { FormsModule } from '@angular/forms';
 import { provideHttpClient , withFetch } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
@@ -19,17 +21,21 @@ import { AddModalComponent } from './modules/devis/components/add-modal/add-moda
   declarations: [
     AppComponent,
     EquipmentsComponent,
+    CreatDemandeComponent,
     ContractsComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    FormsModule,
+    RouterModule,
+    BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
     FormsModule,
     MatDialogModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    AppRoutingModule,
+    BrowserModule,
+    MatDialogModule
     ],
     
   providers: [

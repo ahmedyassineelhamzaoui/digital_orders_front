@@ -1,28 +1,29 @@
-
-    <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-      <div class="position-sticky">
-        <div class="list-group list-group-flush mx-3 mt-4">
-          <a  class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
-          </a>
-          <a routerLink="equipments" class="list-group-item list-group-item-action py-2 ripple active">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>equipments</span>
-          </a>
-          <a routerLink="categories" class="list-group-item list-group-item-action py-2 ripple">
-            <i class="fas fa-chart-pie fa-fw me-3"></i><span>Categories</span>
-          </a>
-          <a routerLink="demandes" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-chart-bar fa-fw me-3"></i><span>Demandes</span></a>
-          <a routerLink="devis" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-globe fa-fw me-3"></i><span>Devis</span></a>
-          <a routerLink="users" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
-          <a routerLink="contracts" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-money-bill fa-fw me-3"></i><span>Contracts</span></a>
-        </div>
-      </div>
-    </nav>
-    <!-- Sidebar -->
-
-  
+<!-- Sidebar -->
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+  <div class="position-sticky">
+    <div class="list-group list-group-flush mx-3 mt-4">
+      <a [ngClass]="{'btn active': isRouteActive('/')}" routerLink="/" class="btn list-group-item list-group-item-action py-3 ripple" aria-current="true">
+        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+      </a>
+      <a [ngClass]="{'btn active': isRouteActive('/equipments')}" routerLink="/equipments" class="btn list-group-item list-group-item-action py-3 ripple ">
+        <i class="fas fa-chart-area fa-fw me-3"></i><span>equipments</span>
+      </a>
+      <a [ngClass]="{'btn active': isRouteActive('/categories')}" routerLink="/categories" class="btn list-group-item list-group-item-action py-3 ripple">
+        <i class="fas fa-chart-pie fa-fw me-3"></i><span>Categories</span>
+      </a>
+      <a [ngClass]="{'btn active': isRouteActive('/demandes')}" routerLink="/demandes" class="btn list-group-item list-group-item-action py-3 ripple">
+        <i class="fas fa-chart-bar fa-fw me-3"></i><span>Demandes</span>
+      </a>
+      <a [ngClass]="{'btn active': isRouteActive('/devis')}" routerLink="/devis" class="btn list-group-item list-group-item-action py-3 ripple">
+        <i class="fas fa-globe fa-fw me-3"></i><span>Devis</span>
+      </a>
+      <a [ngClass]="{'btn active': isRouteActive('/users')}" routerLink="/users" class="btn list-group-item list-group-item-action py-3 ripple">
+        <i class="fas fa-users fa-fw me-3"></i><span>Users</span>
+      </a>
+      <a [ngClass]="{'btn active': isRouteActive('/contracts')}" routerLink="/contracts" class="btn list-group-item list-group-item-action py-3 ripple">
+        <i class="fas fa-money-bill fa-fw me-3"></i><span>Contracts</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<!-- Sidebar -->

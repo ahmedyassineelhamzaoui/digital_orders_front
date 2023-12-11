@@ -1,0 +1,35 @@
+<div class="mt-5">
+    <div class="container shadow rounded bg-white border p-4" style="width: 50%">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 mb-5" id="exampleModalLabel">Creat demandes</h1>
+        </div>
+        @if(errorMessages){
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error! </strong> {{errorMessages}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            }
+        <div class="modal-body">
+            <form (ngSubmit)="onSubmit()" >
+                    <div class="mb-3">
+                        <label for="startDate" class="form-label">From : </label>
+                        <input type="date" id="startDate" name="startDate"  [(ngModel)]="formData.startDate" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="endDate" class="form-label">To</label>
+                        <input type="date" id="endDate" name="endDate" [(ngModel)]="formData.endDate" class="form-control">
+                    </div>
+                    <!-- <div class="mb-3">
+                        <input type="text" id="userId" name="userId" hidden [(ngModel)]="formData.userId" class="form-control">
+                    </div> -->
+                    <!-- <div class="mb-3">
+                        <input type="text" id="equipmentId" name="equipmentId" hidden [(ngModel)]="formData.equipmentId" class="form-control" >
+                    </div> -->
+                    <button type="submit" class="btn btn-primary mt-3">Add</button>
+                </form>
+        </div>
+        </div>
+    </div>
+    </div>
+  

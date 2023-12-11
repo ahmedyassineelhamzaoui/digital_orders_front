@@ -14,7 +14,7 @@ export class EquipmentsComponent {
   isLoading : boolean = false;
   constructor(
     private equipmentService:EquipmentsService,
-    private categoryService:CategoriesService
+    private categoryService:CategoriesService,
     ) { }
   ngOnInit() {
       this.isLoading = true;
@@ -41,5 +41,4 @@ export class EquipmentsComponent {
       this.isLoading = false;
     });
   }
-
 }

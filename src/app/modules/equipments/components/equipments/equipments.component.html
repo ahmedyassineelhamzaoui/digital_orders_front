@@ -34,7 +34,8 @@
                             additional content. This content is a little bit longer.</p>
                         <p class="card-text">Price: <small class="text-muted"> {{item.rentalPrice}}</small></p>
                         <div class="d-flex align-items-center justify-content-between mb-2">
-                            <button class="btn btn-primary">rent</button>
+                            <!-- <button class="btn btn-primary" routerLink="/Creatdemande">rent</button> -->
+                            <a [routerLink]="['/Creatdemande', item.id]" class="btn btn-primary" > Demand</a>
                             <div>
                                 <button class="btn btn-warning me-1">
                                     <i class="fas fa-edit"></i>
