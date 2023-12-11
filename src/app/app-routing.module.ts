@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'devis', component: DevisComponent},
   { path: 'equipments', component: EquipmentsComponent },
   { path: 'categories', component: CategoriesComponent},
-  { path: 'contract', component: ContractsComponent },
+  { path: 'contracts', component: ContractsComponent },
   { path: '404', component: NotfounderrorComponent },
   { path: '', redirectTo: '/equipments', pathMatch: 'full'},
   { path: '**', redirectTo: '/404', pathMatch: 'full'},
