@@ -28,7 +28,6 @@ export class CreatDemandeComponent {
         this.router.navigate(['/demandes']);
       },
       (error)=>{
-        // console.log(error.error)
         this.errorMessages = error.error.message;
       }
     );

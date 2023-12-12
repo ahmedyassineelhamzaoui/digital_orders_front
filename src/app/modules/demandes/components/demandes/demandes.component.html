@@ -4,6 +4,12 @@
         <!-- Add button if needed -->
         <!-- <a class="btn btn-primary"><i class="fas fa-plus me-1"></i>Demand an Equipment</a> -->
     </div>
+    @if(errorMessages){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> {{errorMessages}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        }
     <div class="row mt-2 gap-4 d-flex justify-content-center align-items-center">
         @for (item of demandes; track $index) {
             <div class="col-md-3">

@@ -13,6 +13,7 @@ export class DemandesComponent{
   status:any = {
     demandeStatus:''
   };
+  errorMessages: string = '';
   constructor(
     private demandesService: DemandesService,
     private router: Router
@@ -39,8 +40,10 @@ export class DemandesComponent{
         (response) => {
           console.log('Successfully submitted:', response);
           this.getAllDemandes();
-        }
-      );
+        },
+        (error)=>{
+          this.errorMessages = error.error.message;
+        } );
   }
   deleteDemand(demandeId:number){
     this.demandesService.delete(demandeId).subscribe( 

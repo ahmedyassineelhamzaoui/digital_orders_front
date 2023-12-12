@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { DemandesService } from '../../services/demandes.service';
+import { EquipmentsService } from '../../../equipments/services/equipments.service';
 
 
 @Component({
@@ -14,12 +15,24 @@ export class UpdateDemandeComponent {
   formInfo:any = {};
   demande:any={};
   demandeId:string |null= "";
+  equipments:any[] = [];
+  errorMessages: string = '';
   constructor(
     private demandesService: DemandesService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private equipmentService: EquipmentsService) { }
   ngOnInit(){
     this.demandeId= this.route.snapshot.paramMap.get('id');
+    this.getDemandeById();
+    this.getAllEquipment();
+  }
+  getAllEquipment(){
+    this.equipmentService.getAllEquipments().subscribe((data:any) => {
+      this.equipments = data.equipments;
+    } );
+  }
+  getDemandeById(){
     this.demandesService.getDemandByid(this.demandeId).subscribe(data=>{
       this.demande=data;
       this.demande.startDate = this.formatDate(this.demande.startDate);
@@ -27,11 +40,14 @@ export class UpdateDemandeComponent {
       console.log(this.demande.equipment)
     })
   }
-
   onUpdate(){
-    this.demandesService.update(this.demandeId , this.formInfo).subscribe(  
+    this.demandesService.update(this.demandeId , this.demande).subscribe(  
       (response) => {
       console.log('Successfully submitted:', response);
+      this.router.navigate(['/demandes']);
+    },
+    (error)=>{
+      this.errorMessages = error.error.message;
     })
   }
 
