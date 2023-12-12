@@ -22,6 +22,7 @@ export class EquipmentsComponent {
       this.getAllEquipments();
   }
   getAllEquipments(){
+    console.log("tttttttttttttttttttttttttttttttttttttt")
     this.equipmentService.getAllEquipments().subscribe((data:any) => {
       this.equipments = data.equipments;
       this.errorMessage = null;
